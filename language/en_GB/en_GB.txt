@@ -1,0 +1,20 @@
+68700 Azure VM Inventory
+68701 Resource name
+68702 VM ID
+68703 Team
+68704 Platform
+68705 Image
+68706 SKU
+68707 Exact version
+68708 Provisioning state
+68709 Disk size
+68710 Create options
+68711 Caching type
+68712 Accelerator
+68713 Storage Type
+68714 Base infos
+68715 Location
+68716 Virtual Machines
+68717 Resources
+68718 Back to subscription view
+68719 Back to resources group view

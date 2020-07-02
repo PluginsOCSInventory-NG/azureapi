@@ -1,0 +1,13 @@
+  
+{
+    "displayName" : "Azure API",
+    "author" : ["Gilles DUBOIS"],
+    "contributor" : ["Robert Kenney"],
+    "supportedAgent" : ["Linux"],
+    "version" : "1.0",
+    "licence" : "GPLv2",
+    "description" : {
+      "fr" : "Récupère les infos des VMs Azure",
+      "en" : "Retrieve Azure VMs Infos"
+    }
+  }
