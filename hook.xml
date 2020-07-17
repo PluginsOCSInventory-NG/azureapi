@@ -9,4 +9,9 @@
         <identifier>ms_azure</identifier>
         <translation>68700</translation>
     </hook>
+    <hook type="submenu">
+        <mainmenuidentifier>ms_extension</mainmenuidentifier>
+        <identifier>ms_azure_fulllist</identifier>
+        <translation>68800</translation>
+    </hook>
 </hookstore>
