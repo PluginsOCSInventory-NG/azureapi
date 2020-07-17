@@ -4,7 +4,7 @@
     "author" : ["Gilles DUBOIS"],
     "contributor" : ["Robert Kenney"],
     "supportedAgent" : ["Linux"],
-    "version" : "1.0",
+    "version" : "1.1",
     "licence" : "GPLv2",
     "description" : {
       "fr" : "Récupère les infos des VMs Azure",
