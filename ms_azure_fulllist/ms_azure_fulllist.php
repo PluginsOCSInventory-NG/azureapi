@@ -33,7 +33,7 @@ $tab_options=$protectedPost;
 $tab_options['form_name']=$form_name;
 $tab_options['table_name']=$table_name;
 
-$sql['SQL'] = 'SELECT * FROM azurevms AS azv INNER JOIN azuresub AS azs ON azs.SUBID = azv.VMSUBID INNER JOIN azureresgroups AS azrg ON azrg.RESNAME = azv.VMRESGRP';
+$sql['SQL'] = 'SELECT * FROM azurevms AS azv INNER JOIN azuresub AS azs ON azs.SUBID = azv.VMSUBID INNER JOIN azureresgroups AS azrg ON azrg.RESNAME = azv.VMRESGRP GROUP BY azv.VMID';
 
 $list_fields = array(
   $l->g(1268) => "SUBID",
