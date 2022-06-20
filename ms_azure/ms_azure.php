@@ -57,9 +57,9 @@
         $default_fields= $list_fields;
         $sql=prepare_sql_tab($list_fields);
         $sql['SQL']  .= "FROM azuresub";
-        array_push($sql['ARG'],$systemid);
+        array_push($sql['ARG'],$systemid ?? '');
         $tab_options['ARG_SQL']=$sql['ARG'];
-        $tab_options['ARG_SQL_COUNT']=$systemid;
+        $tab_options['ARG_SQL_COUNT']=$systemid ?? '';
         ajaxtab_entete_fixe($list_fields,$default_fields,$tab_options,$list_col_cant_del);
         echo close_form();
     }else if(isset($protectedGet['subid']) && !isset($protectedGet['resgrp']) && !isset($protectedGet['vmid'])){
@@ -105,7 +105,7 @@
         $def_onglets['RESOURCES'] = $l->g(68717); 
 
         //default => first onglet
-        if ($protectedPost['onglet'] == "") {
+        if (empty($protectedPost['onglet'])) {
             $protectedPost['onglet'] = "VM";
         }
 
@@ -116,7 +116,7 @@
 		echo '<div class="col col-md-10">';
 
 		/******************************* VM *******************************/
-        if($protectedPost['onglet'] == "VM"){
+        if(isset($protectedPost['onglet']) && $protectedPost['onglet'] == "VM"){
 
             $sql['SQL'] = 'SELECT * FROM azurevms WHERE VMRESGRP = "%s" AND VMSUBID = "%s"';
             $sql['ARG'] = [$protectedGet['resgrp'], $protectedGet['subid']];
@@ -139,7 +139,7 @@
         }
 
         /******************************* RESOURCES *******************************/
-        if($protectedPost['onglet'] == "RESOURCES"){
+        if(isset($protectedPost['onglet']) && $protectedPost['onglet'] == "RESOURCES"){
 
 			$sql['SQL'] = 'SELECT * FROM azureres WHERE RESGRP = "%s" AND RESSUBID = "%s"';
             $sql['ARG'] = [$protectedGet['resgrp'], $protectedGet['subid']];
@@ -174,7 +174,7 @@
         $def_onglets['DISKS'] = $l->g(92); 
 
         //default => first onglet
-        if ($protectedPost['onglet'] == "") {
+        if (empty($protectedPost['onglet'])) {
             $protectedPost['onglet'] = "DISKS";
         }
 
@@ -185,7 +185,7 @@
 		echo '<div class="col col-md-10">';
 
         /******************************* DISKS *******************************/
-        if($protectedPost['onglet'] == "DISKS"){
+        if(isset($protectedPost['onglet']) && $protectedPost['onglet'] == "DISKS"){
 
 			$sql['SQL'] = 'SELECT * FROM azuredisk WHERE VMID = "%s"';
             $sql['ARG'] = [$protectedGet['vmid']];
